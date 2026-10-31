@@ -1,4 +1,4 @@
-# Corporate RAG Engine 🧠
+# Corporate RAG Engine
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![ChromaDB](https://img.shields.io/badge/VectorDB-ChromaDB-orange)](https://www.trychroma.com/)
@@ -10,7 +10,7 @@ Pipeline de **Retrieval-Augmented Generation (RAG)** construído em Python. O si
 
 ---
 
-## 🏛️ Arquitetura do Sistema
+## Arquitetura do Sistema
 
 ```
 [ Documento .md ] 
@@ -39,7 +39,7 @@ Pipeline de **Retrieval-Augmented Generation (RAG)** construído em Python. O si
 
 ---
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```text
 rag-app/
@@ -58,7 +58,7 @@ rag-app/
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 ### 1. Clonar o repositório
 ```bash
@@ -95,7 +95,7 @@ GROQ_API_KEY=gsk_sua_chave_aqui_gerada_no_console_groq
 GROQ_MODEL=llama-3.1-8b-instant
 ```
 
-> 💡 **Como obter a chave Groq**: Crie uma conta gratuita em [console.groq.com](https://console.groq.com/), vá na aba **API Keys** e gere uma chave.
+> **Como obter a chave Groq**: Crie uma conta gratuita em [console.groq.com](https://console.groq.com/), vá na aba **API Keys** e gere uma chave.
 
 ### 5. Executar o Pipeline RAG
 
@@ -111,7 +111,7 @@ python rag_pipeline.py
 
 ---
 
-## 🧪 Exemplo de Execução
+## Exemplo de Execução
 
 **Entrada:**
 ```
@@ -137,7 +137,7 @@ De acordo com o documento corporativo, em caso de atrasos imprevistos superiores
 
 ---
 
-## 🔍 Detalhes Técnicos
+## Detalhes Técnicos
 
 ### 1. Chunking com Janela Deslizante (*Sliding Window*)
 Para evitar a perda de contexto semântico entre frases cortadas arbitrariamente, o fatiamento utiliza um algoritmo com sobreposição (*overlap*):
@@ -156,7 +156,7 @@ Para evitar a perda de contexto semântico entre frases cortadas arbitrariamente
 
 ---
 
-## 🛠️ Personalização
+## Personalização
 
 - **Base de conhecimento:** Substitua ou adicione novas informações no arquivo [data/knowledge_base.md](data/knowledge_base.md).
 - **Parâmetros de busca:** Altere `n_results` em `vector_store.search()` para controlar quantos blocos de contexto são injetados no prompt.
@@ -164,5 +164,5 @@ Para evitar a perda de contexto semântico entre frases cortadas arbitrariamente
 
 ---
 
-## 📄 Licença
+## Licença
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
