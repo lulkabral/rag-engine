@@ -6,7 +6,7 @@
 [![HuggingFace](https://img.shields.io/badge/Embeddings-Sentence--Transformers-yellow)](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Pipeline de **Retrieval-Augmented Generation (RAG)** construído em Python. O sistema processa documentos corporativos locais em Markdown, gera embeddings vetoriais localmente com Hugging Face (`all-MiniLM-L6-v2`), armazena no **ChromaDB** e utiliza o motor de inferência ultra-rápido da **Groq** (Llama 3) para responder perguntas estritamente fundamentadas no contexto fornecido.
+Pipeline de **Retrieval-Augmented Generation (RAG)** construído em Python. O sistema processa documentos corporativos locais em Markdown, gera embeddings vetoriais localmente com Hugging Face (`all-MiniLM-L6-v2`), armazena no **ChromaDB** e utiliza o motor de inferência ultra-rápido da **Groq** (OpenAI GPT-OSS) para responder perguntas estritamente fundamentadas no contexto fornecido.
 
 ---
 
@@ -33,7 +33,7 @@ Pipeline de **Retrieval-Augmented Generation (RAG)** construído em Python. O si
            │
            ▼
 ┌─────────────────────────┐
-│ 4. Groq LLM Generation  │ -> Resposta precisa e veloz via Llama 3
+│ 4. Groq LLM Generation  │ -> Resposta precisa e veloz via OpenAI GPT-OSS
 └─────────────────────────┘
 ```
 
@@ -92,7 +92,7 @@ cp .env.example .env
 Edite o arquivo `.env`:
 ```ini
 GROQ_API_KEY=gsk_sua_chave_aqui_gerada_no_console_groq
-GROQ_MODEL=llama-3.1-8b-instant
+GROQ_MODEL=openai/gpt-oss-120b
 ```
 
 > **Como obter a chave Groq**: Crie uma conta gratuita em [console.groq.com](https://console.groq.com/), vá na aba **API Keys** e gere uma chave.
@@ -160,7 +160,7 @@ Para evitar a perda de contexto semântico entre frases cortadas arbitrariamente
 
 - **Base de conhecimento:** Substitua ou adicione novas informações no arquivo [data/knowledge_base.md](data/knowledge_base.md).
 - **Parâmetros de busca:** Altere `n_results` em `vector_store.search()` para controlar quantos blocos de contexto são injetados no prompt.
-- **Modelo:** Altere `GROQ_MODEL` no `.env` para outros modelos suportados na Groq (ex: `llama-3.3-70b-versatile`, `mixtral-8x7b-32768`).
+- **Modelo:** Altere `GROQ_MODEL` no `.env` para outros modelos suportados na Groq (ex: `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `qwen/qwen3.8-27b`).
 
 ---
 

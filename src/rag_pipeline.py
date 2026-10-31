@@ -65,7 +65,7 @@ class RAGPipeline:
         
         Resposta:"""
 
-        # 3. Generation (Geração) usando Llama via Groq
+        # 3. Generation (Geração) usando LLM via Groq
         response = self.llm_client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
             model=self.model,
